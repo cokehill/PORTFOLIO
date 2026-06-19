@@ -20,6 +20,15 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const logos = [
+  "https://framerusercontent.com/images/thnl5ojrPDJHe6wqR1XyOQtjY.png",
+  "https://framerusercontent.com/images/7QV8ZRpDIrQ8WDfEQo5YrXrOdY.png",
+  "https://framerusercontent.com/images/hbQoHm3DxGjTvwuZCihDCVRf68.png",
+  "https://framerusercontent.com/images/j5Ewq5A9Jqjx0ZTEdhGFo2mA68.png",
+  "https://framerusercontent.com/images/9k1PBTfMERvO6z3Y0MfZlgFFZU.png",
+  "https://framerusercontent.com/images/TKSzFA87J3EjF2Ay6DpYDieEQFY.png",
+];
+
 const projects = [
   { img: "https://framerusercontent.com/images/mKpBcirmfqd4t3E4WfKHynhKvA.webp", title: "Fresh Face Club", sub: "E-commerce · Featured", url: "https://github.com/cokehill/Fresh-face-Club" },
   { img: "https://framerusercontent.com/images/hxgSQmquybiB6mIsV8wyxmKgo.jpeg", title: "stellar-hooks", sub: "Open-source · Stellar", url: "https://github.com/dark-princezz/stellar-hooks" },
