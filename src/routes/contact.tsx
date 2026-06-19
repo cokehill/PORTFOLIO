@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Github, Instagram, Mail, Send } from "lucide-react";
 import { useState } from "react";
-import { SharedNav, ProfileCardDesktop, ProfileCardMobile, WhatsAppIcon, SOCIAL_LINKS } from "../components/shared-layout";
+import { SharedNav, ProfileCardDesktop, WhatsAppIcon, SOCIAL_LINKS } from "../components/shared-layout";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -25,7 +25,7 @@ function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative z-10 min-h-screen bg-background text-foreground">
       <SharedNav active="contact" />
 
       {/* DESKTOP */}
@@ -120,7 +120,6 @@ function ContactPage() {
 
       {/* MOBILE */}
       <div className="md:hidden px-4 pt-24 pb-16">
-        <ProfileCardMobile />
         <div className="mt-10">
           <h1 className="text-4xl font-bold tracking-tight leading-[1.05] mb-4">
             Get In{" "}

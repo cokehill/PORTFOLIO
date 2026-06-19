@@ -20,14 +20,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const logos = [
-  "https://framerusercontent.com/images/thnl5ojrPDJHe6wqR1XyOQtjY.png",
-  "https://framerusercontent.com/images/7QV8ZRpDIrQ8WDfEQo5YrXrOdY.png",
-  "https://framerusercontent.com/images/hbQoHm3DxGjTvwuZCihDCVRf68.png",
-  "https://framerusercontent.com/images/j5Ewq5A9Jqjx0ZTEdhGFo2mA68.png",
-  "https://framerusercontent.com/images/9k1PBTfMERvO6z3Y0MfZlgFFZU.png",
-  "https://framerusercontent.com/images/TKSzFA87J3EjF2Ay6DpYDieEQFY.png",
-];
 
 const projects = [
   { img: "https://framerusercontent.com/images/mKpBcirmfqd4t3E4WfKHynhKvA.webp", title: "Fresh Face Club", sub: "E-commerce · Featured", url: "https://github.com/cokehill/Fresh-face-Club" },
@@ -162,18 +154,6 @@ function TestimonialsCarousel() {
 function PageSections() {
   return (
     <>
-      {/* Logos marquee */}
-      <section className="mt-16">
-        <p className="text-center text-muted-foreground mb-8">Open-source contributions · Stellar ecosystem · Nigerian market</p>
-        <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-          <div className="flex gap-16 animate-marquee w-max">
-            {[...logos, ...logos, ...logos].map((src, i) => (
-              <img key={i} src={src} alt="" className="h-8 opacity-60" />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Projects */}
       <section className="mt-20">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-12">Projects & Open-Source Work</h2>
@@ -258,7 +238,7 @@ function PageSections() {
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative z-10 min-h-screen bg-background text-foreground">
       <SharedNav active="home" />
 
       {/* DESKTOP/TABLET: two-column layout — card sticky, content scrolls */}

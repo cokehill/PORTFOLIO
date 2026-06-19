@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { SharedNav, ProfileCardDesktop, ProfileCardMobile } from "../components/shared-layout";
+import { SharedNav, ProfileCardDesktop } from "../components/shared-layout";
 
 export const Route = createFileRoute("/experience")({
   head: () => ({
@@ -46,7 +46,7 @@ const experiences = [
 
 function ExperiencePage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative z-10 min-h-screen bg-background text-foreground">
       <SharedNav active="experience" />
 
       {/* DESKTOP/TABLET */}
@@ -106,7 +106,6 @@ function ExperiencePage() {
 
       {/* MOBILE */}
       <div className="md:hidden px-4 pt-24 pb-16">
-        <ProfileCardMobile />
 
         {/* Mobile experience content */}
         <div className="mt-10">

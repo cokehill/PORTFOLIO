@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SharedNav, ProfileCardDesktop, ProfileCardMobile } from "../components/shared-layout";
+import { SharedNav, ProfileCardDesktop } from "../components/shared-layout";
 
 export const Route = createFileRoute("/tools")({
   head: () => ({
@@ -50,7 +50,7 @@ const categories = [
 
 function ToolsPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative z-10 min-h-screen bg-background text-foreground">
       <SharedNav active="tools" />
 
       {/* DESKTOP */}
@@ -86,7 +86,6 @@ function ToolsPage() {
 
       {/* MOBILE */}
       <div className="md:hidden px-4 pt-24 pb-16">
-        <ProfileCardMobile />
         <div className="mt-10">
           <h1 className="text-4xl font-bold tracking-tight leading-[1.05] mb-10">
             Tech Stack &{" "}
