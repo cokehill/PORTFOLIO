@@ -210,12 +210,7 @@ function PageSections() {
       </section>
 
       {/* FAQ */}
-      <section className="mt-20 max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-12 text-center">Frequently Asked Questions</h2>
-        <div className="space-y-3">
-          {faqs.map((item, i) => <FAQItem key={i} q={item.q} a={item.a} />)}
-        </div>
-      </section>
+      <FAQSection />
 
       {/* CTA */}
       <section className="mt-20 pb-8">
@@ -319,11 +314,10 @@ function Index() {
 }
 
 
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
+function FAQItem({ q, a, open, onToggle }: { q: string; a: string; open: boolean; onToggle: () => void }) {
   return (
     <div className="bg-card border border-border rounded-2xl">
-      <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-6 py-5 text-left">
+      <button onClick={onToggle} className="w-full flex items-center justify-between px-6 py-5 text-left">
         <span className="font-medium">{q}</span>
         {open ? <Minus className="w-5 h-5 text-muted-foreground" /> : <Plus className="w-5 h-5 text-muted-foreground" />}
       </button>
@@ -333,5 +327,25 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         </div>
       )}
     </div>
+  );
+}
+
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  return (
+    <section className="mt-20 max-w-3xl mx-auto">
+      <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-12 text-center">Frequently Asked Questions</h2>
+      <div className="space-y-3">
+        {faqs.map((item, i) => (
+          <FAQItem
+            key={i}
+            q={item.q}
+            a={item.a}
+            open={openIndex === i}
+            onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
